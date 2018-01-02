@@ -1,0 +1,8 @@
+vendor
+composer.lock
+selenium.jar
+chromedriver
+tests/_output
+/tests/_support/_generated/
+.idea
+/tests/_support/NoGuy.php

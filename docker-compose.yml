@@ -1,0 +1,18 @@
+version: '2'
+services:
+  codecept:
+      image: codeception/codeception
+      depends_on:
+        - chrome
+      volumes:
+          - './tests:/project/tests'
+          - './codeception.yml:/project/codeception.yml'
+  chrome:
+      image: 'selenium/standalone-chrome:3.5.3'
+      ports:
+          - '5900'
+      # workaround for Docker for Mac, see https://github.com/SeleniumHQ/docker-selenium/issues/227#issuecomment-224865735
+      dns: 8.8.4.4
+      environment:
+        - no_proxy=localhost
+
